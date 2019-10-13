@@ -1,5 +1,6 @@
-package me.mqueiroz.home
+package me.mqueiroz.home.di
 
+import me.mqueiroz.home.data.GlobalParamsInterceptor
 import okhttp3.OkHttpClient
 import org.koin.core.context.loadKoinModules
 import org.koin.dsl.module
@@ -11,7 +12,11 @@ private const val url = "https://api.themoviedb.org/3/"
 
 private val moduleCoreNetworking = module {
 
-    single { OkHttpClient() }
+    single {
+        OkHttpClient.Builder()
+            .addInterceptor(GlobalParamsInterceptor())
+            .build()
+    }
 
     single {
         Retrofit.Builder()

@@ -1,8 +1,8 @@
 package me.mqueiroz.moviepedia
 
 import android.app.Application
-import me.mqueiroz.home.loadCoreNetwork
-import me.mqueiroz.home.loadFeatureHome
+import me.mqueiroz.home.di.loadCoreNetwork
+import me.mqueiroz.home.di.loadFeatureHome
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 

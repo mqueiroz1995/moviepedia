@@ -3,7 +3,7 @@ package me.mqueiroz.moviepedia
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import me.mqueiroz.home.HomeFragment
+import me.mqueiroz.home.presentation.HomeFragment
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
