@@ -1,2 +1,2 @@
-include ':app', ':home'
+include ':app', ':home', ':core-network'
 rootProject.name='Moviepedia'

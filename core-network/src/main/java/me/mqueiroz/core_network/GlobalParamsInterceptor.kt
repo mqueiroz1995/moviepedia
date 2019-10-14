@@ -1,14 +1,16 @@
-package me.mqueiroz.home.data
+package me.mqueiroz.core_network
 
 import okhttp3.Interceptor
 import okhttp3.Response
 
-class GlobalParamsInterceptor : Interceptor {
+class GlobalParamsInterceptor(
+    private val key: String
+) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
 
         val url = request.url.newBuilder()
-            .addQueryParameter("api_key", "693d7f88796c8ef92c2cc2c279ffbb20")
+            .addQueryParameter("api_key", key)
             .build()
 
         val interceptedRequest = request.newBuilder()

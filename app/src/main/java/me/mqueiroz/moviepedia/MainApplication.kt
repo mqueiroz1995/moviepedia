@@ -1,7 +1,7 @@
 package me.mqueiroz.moviepedia
 
 import android.app.Application
-import me.mqueiroz.home.di.loadCoreNetwork
+import me.mqueiroz.core_network.loadCoreNetwork
 import me.mqueiroz.home.di.loadFeatureHome
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -21,6 +21,7 @@ class MainApplication : Application() {
     }
 
     private fun loadCoreModules() {
+        loadApiInfoProvider()
         loadCoreNetwork()
     }
 
