@@ -1,43 +1,13 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-
-android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.0"
-
-
-    defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            consumerProguardFiles 'consumer-rules.pro'
-        }
-    }
-
-}
+apply from: '../android-library.gradle'
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    implementation Libraries.kotlin
-
-    implementation Libraries.core
+    implementation Libraries.androidxCore
     implementation Libraries.appCompat
     implementation Libraries.activity
     implementation Libraries.fragment
     implementation Libraries.constraintLayout
     implementation Libraries.recyclerView
     implementation Libraries.lifecycle
-
-    testImplementation TestLibraries.core
 
     implementation Libraries.koin
     implementation Libraries.koinAndroid
@@ -49,15 +19,13 @@ dependencies {
     implementation Libraries.rxandroid
 
     implementation Libraries.retrofit
-    implementation Libraries.retrofitAdapterRxJava
-    implementation Libraries.retrofitConverterMoshi
-    implementation Libraries.okhttp
     implementation Libraries.moshi
 
     testImplementation TestLibraries.junit
     testImplementation TestLibraries.mockk
     testImplementation TestLibraries.truth
     testImplementation TestLibraries.mockWebServer
+    testImplementation TestLibraries.androidxCore
 
     androidTestImplementation AndroidTestLibraries.androidxTestRunner
     androidTestImplementation AndroidTestLibraries.espresso

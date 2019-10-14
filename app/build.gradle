@@ -9,30 +9,25 @@ repositories {
 }
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.0"
+    compileSdkVersion AndroidConfig.compileSdk
+    buildToolsVersion AndroidConfig.buildTools
 
     defaultConfig {
         applicationId "me.mqueiroz.moviepedia"
-        minSdkVersion 14
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion AndroidConfig.minSdk
+        targetSdkVersion AndroidConfig.targetSdk
+        versionCode AndroidConfig.versionCode
+        versionName AndroidConfig.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "API_HOST", ApiConfig.host
+        buildConfigField "String", "API_KEY", ApiConfig.key
     }
 
     buildTypes {
-        debug {
-            buildConfigField "String", "API_HOST", "\"https://api.themoviedb.org/3/\""
-            buildConfigField "String", "API_KEY", "\"693d7f88796c8ef92c2cc2c279ffbb20\""
-        }
-
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-
-            buildConfigField "String", "API_HOST", "\"https://api.themoviedb.org/3/\""
-            buildConfigField "String", "API_KEY", "\"693d7f88796c8ef92c2cc2c279ffbb20\""
         }
     }
 }

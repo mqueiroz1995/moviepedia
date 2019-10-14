@@ -42,7 +42,7 @@ object Libraries {
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
 
     // androidx
-    const val core = "androidx.core:core-ktx:${Versions.androidxCore}"
+    const val androidxCore = "androidx.core:core-ktx:${Versions.androidxCore}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val activity = "androidx.activity:activity-ktx:${Versions.activity}"
     const val fragment = "androidx.fragment:fragment-ktx:${Versions.fragment}"
@@ -72,7 +72,7 @@ object TestLibraries {
     const val truth = "com.google.truth:truth:${Versions.truth}"
 
     // androidx
-    const val core = "androidx.arch.core:core-testing:${Versions.androidxCoreTesting}"
+    const val androidxCore = "androidx.arch.core:core-testing:${Versions.androidxCoreTesting}"
 
     const val mockWebServer = "com.squareup.okhttp3:mockwebserver:${Versions.okhttp}"
 }
