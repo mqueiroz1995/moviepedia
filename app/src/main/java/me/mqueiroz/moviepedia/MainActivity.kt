@@ -10,8 +10,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
 
-
-
         supportFragmentManager
             .beginTransaction()
             .add(content.id, HomeFragment())
