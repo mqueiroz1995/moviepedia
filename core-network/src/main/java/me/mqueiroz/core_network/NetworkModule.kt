@@ -7,9 +7,6 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-private var url = "https://api.themoviedb.org/3/"
-private var key = ""
-
 private val moduleCoreNetworking = module {
     single {
         OkHttpClient.Builder()
