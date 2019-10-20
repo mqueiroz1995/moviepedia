@@ -19,15 +19,20 @@ android {
         versionCode AndroidConfig.versionCode
         versionName AndroidConfig.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-        buildConfigField "String", "API_HOST", ApiConfig.host
-        buildConfigField "String", "API_KEY", ApiConfig.key
     }
 
     buildTypes {
+        debug {
+            buildConfigField "String", "API_HOST", EnvDebug.host
+            buildConfigField "String", "API_KEY", EnvDebug.key
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField "String", "API_HOST", EnvRelease.host
+            buildConfigField "String", "API_KEY", EnvRelease.key
         }
     }
 }
