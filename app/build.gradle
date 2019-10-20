@@ -1,3 +1,5 @@
+import environment.Environment
+
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
@@ -19,15 +21,22 @@ android {
         versionCode AndroidConfig.versionCode
         versionName AndroidConfig.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-        buildConfigField "String", "API_HOST", ApiConfig.host
-        buildConfigField "String", "API_KEY", ApiConfig.key
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            
+            buildConfigField "String", Environment.host, Environment.Debug.host
+            buildConfigField "String", Environment.key, Environment.Debug.key
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField "String", Environment.host, Environment.Release.host
+            buildConfigField "String", Environment.key, Environment.Release.key
         }
     }
 }
