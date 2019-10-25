@@ -28,4 +28,14 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation Libraries.kotlin
+
+    testImplementation TestLibraries.junit
+    testImplementation TestLibraries.mockk
+    testImplementation TestLibraries.truth
+    testImplementation TestLibraries.mockWebServer
+    testImplementation TestLibraries.androidxCore
+
+    androidTestImplementation AndroidTestLibraries.androidxTestRunner
+    androidTestImplementation AndroidTestLibraries.espresso
+    androidTestImplementation AndroidTestLibraries.mockk
 }
