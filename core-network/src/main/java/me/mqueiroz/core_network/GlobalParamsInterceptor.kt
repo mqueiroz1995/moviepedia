@@ -10,7 +10,7 @@ class GlobalParamsInterceptor(
         val request = chain.request()
 
         val url = request.url.newBuilder()
-            .addQueryParameter("api_key", key)
+            .addQueryParameter(API_KEY, key)
             .build()
 
         val interceptedRequest = request.newBuilder()
@@ -18,5 +18,10 @@ class GlobalParamsInterceptor(
             .build()
 
         return chain.proceed(interceptedRequest)
+    }
+
+    companion object {
+
+        const val API_KEY = "api_key"
     }
 }

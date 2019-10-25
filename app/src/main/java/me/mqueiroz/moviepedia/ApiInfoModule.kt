@@ -7,9 +7,9 @@ import org.koin.dsl.module
 fun loadApiInfoProvider() = loadKoinModules(module {
     single<ApiInfoProvider> {
         object : ApiInfoProvider {
-            override fun provideHost(): String = BuildConfig.API_HOST
+            override fun getHost(): String = BuildConfig.API_HOST
 
-            override fun provideKey(): String = BuildConfig.API_KEY
+            override fun getKey(): String = BuildConfig.API_KEY
         }
     }
 })

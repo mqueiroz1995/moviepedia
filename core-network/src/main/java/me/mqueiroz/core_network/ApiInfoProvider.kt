@@ -2,7 +2,7 @@ package me.mqueiroz.core_network
 
 interface ApiInfoProvider {
 
-    fun provideHost(): String
+    fun getHost(): String
 
-    fun provideKey(): String
+    fun getKey(): String
 }

@@ -8,15 +8,20 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 private val moduleCoreNetworking = module {
+
     single {
+        val apiInfoProvider = get<ApiInfoProvider>()
+
         OkHttpClient.Builder()
-            .addInterceptor(GlobalParamsInterceptor(get<ApiInfoProvider>().provideKey()))
+            .addInterceptor(GlobalParamsInterceptor(apiInfoProvider.getKey()))
             .build()
     }
 
     single {
+        val apiInfoProvider = get<ApiInfoProvider>()
+
         Retrofit.Builder()
-            .baseUrl(get<ApiInfoProvider>().provideHost())
+            .baseUrl(apiInfoProvider.getHost())
             .client(get())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(MoshiConverterFactory.create())
