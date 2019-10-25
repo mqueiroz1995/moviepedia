@@ -1,0 +1,13 @@
+apply from: '../android-library.gradle'
+
+dependencies {
+    implementation Libraries.androidxCore
+    implementation Libraries.appCompat
+    implementation Libraries.activity
+    implementation Libraries.fragment
+    implementation Libraries.constraintLayout
+    implementation Libraries.recyclerView
+    implementation Libraries.lifecycle
+
+    implementation Libraries.rxjava
+}
