@@ -1,6 +1,6 @@
 private object Versions {
     const val androidGradlePlugin = "3.5.1"
-    const val kotlin = "1.3.41"
+    const val kotlin = "1.3.50"
 
     // androidx
     const val androidxCore = "1.1.0"
