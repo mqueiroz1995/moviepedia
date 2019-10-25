@@ -1,6 +1,8 @@
 apply from: '../android-library.gradle'
 
 dependencies {
+    implementation project(Modules.corePresentation)
+
     implementation Libraries.androidxCore
     implementation Libraries.appCompat
     implementation Libraries.activity

@@ -1,53 +1,28 @@
 package me.mqueiroz.home.presentation
 
-import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
-import me.mqueiroz.home.SingleLiveEvent
+import me.mqueiroz.core_presentation.ViewModel
 import me.mqueiroz.home.data.MediaType
 import me.mqueiroz.home.data.TimeWindow
 import me.mqueiroz.home.data.TrendingRepository
 
 class HomeViewModel(
     private val repository: TrendingRepository
-) : ViewModel() {
-
-    private val disposable = CompositeDisposable()
-
-    private val _state = MutableLiveData<HomeViewState>()
-    val state: LiveData<HomeViewState> = _state
-
-    private val _command = SingleLiveEvent<HomeViewCommand>()
-    val command: LiveData<HomeViewCommand> = _command
+) : ViewModel<HomeViewState, HomeViewAction>() {
 
     init {
         repository.getTrending(MediaType.TV, TimeWindow.DAY)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .doOnSubscribe { _state.value = HomeViewState.Loading }
+            .doOnSubscribe {
+                setState { HomeViewState(isProgressBarVisible = true) }
+            }
             .subscribeBy(
-                onSuccess = { handleSuccess() },
-                onError = { handleError() }
+                onSuccess = { setState { HomeViewState(isListVisible = true, listItems = listOf("a", "b", "c")) } },
+                onError = { setState { HomeViewState(isError = true) } }
             )
-            .addTo(disposable)
-    }
-
-    private fun handleSuccess() {
-        _state.value = HomeViewState.Success()
-    }
-
-    private fun handleError() {
-        _state.value = HomeViewState.Error
-    }
-
-    override fun onCleared() {
-        disposable.dispose()
-        super.onCleared()
+            .handleDisposable()
     }
 }

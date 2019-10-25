@@ -1,15 +1,10 @@
 package me.mqueiroz.home.presentation
 
-sealed class HomeViewState {
-    object Loading : HomeViewState()
+import me.mqueiroz.core_presentation.UIState
 
-    data class Success(
-        val elements: List<String> = listOf(
-            "a",
-            "b",
-            "c"
-        )
-    ) : HomeViewState()
-
-    object Error : HomeViewState()
-}
+data class HomeViewState(
+    val isProgressBarVisible: Boolean = false,
+    val isError: Boolean = false,
+    val isListVisible: Boolean = false,
+    val listItems: List<String> = emptyList()
+) : me.mqueiroz.core_presentation.UIState
