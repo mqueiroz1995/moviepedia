@@ -71,7 +71,8 @@ object TestLibraries {
     const val mockk = "io.mockk:mockk:${Versions.mockk}"
     const val truth = "com.google.truth:truth:${Versions.truth}"
 
-    // androidx
+    const val koin = "org.koin:koin-test:${Versions.koin}"
+
     const val androidxCore = "androidx.arch.core:core-testing:${Versions.androidxCoreTesting}"
 
     const val mockWebServer = "com.squareup.okhttp3:mockwebserver:${Versions.okhttp}"
