@@ -21,7 +21,7 @@ private object Versions {
     const val moshi = "1.8.0"
 
     // test
-    const val junit = "4.12"
+    const val junit = "1.1.1"
     const val mockk = "1.9.2.kotlin12"
     const val truth = "1.0"
 
@@ -67,7 +67,7 @@ object Libraries {
 }
 
 object TestLibraries {
-    const val junit = "junit:junit:${Versions.junit}"
+    const val junit = "androidx.test.ext:junit:${Versions.junit}"
     const val mockk = "io.mockk:mockk:${Versions.mockk}"
     const val truth = "com.google.truth:truth:${Versions.truth}"
 
