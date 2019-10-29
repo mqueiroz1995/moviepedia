@@ -20,13 +20,14 @@ android {
         targetSdkVersion AndroidConfig.targetSdk
         versionCode AndroidConfig.versionCode
         versionName AndroidConfig.versionName
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         debug {
             applicationIdSuffix ".debug"
-            
+
             buildConfigField "String", Environment.host, Environment.Debug.host
             buildConfigField "String", Environment.key, Environment.Debug.key
         }
@@ -55,4 +56,9 @@ dependencies {
 
     implementation Libraries.koin
     implementation Libraries.koinAndroid
+    
+    androidTestImplementation TestLibraries.junit
+    androidTestImplementation TestLibraries.koin
+    androidTestImplementation TestLibraries.androidxCore
+    androidTestImplementation AndroidTestLibraries.androidxTestRunner
 }
