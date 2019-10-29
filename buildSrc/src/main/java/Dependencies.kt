@@ -22,7 +22,7 @@ private object Versions {
 
     // test
     const val junit = "4.12"
-    const val mockk = "1.9.3.kotlin12"
+    const val mockk = "1.9.2.kotlin12"
     const val truth = "1.0"
 
     const val androidxCoreTesting = "2.1.0"
