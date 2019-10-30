@@ -3,6 +3,7 @@ private object Versions {
     const val kotlin = "1.3.50"
 
     // androidx
+    const val multidex = "2.0.1"
     const val androidxCore = "1.1.0"
     const val appCompat = "1.1.0"
     const val activity = "1.0.0"
@@ -42,6 +43,7 @@ object Libraries {
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
 
     // androidx
+    const val multidex = "androidx.multidex:multidex:${Versions.multidex}"
     const val androidxCore = "androidx.core:core-ktx:${Versions.androidxCore}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val activity = "androidx.activity:activity-ktx:${Versions.activity}"

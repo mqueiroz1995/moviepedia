@@ -1,9 +1,9 @@
 package me.mqueiroz.moviepedia
 
-import android.app.Application
+import androidx.multidex.MultiDexApplication
 import org.koin.core.context.startKoin
 
-class MainApplication : Application() {
+class MainApplication : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
