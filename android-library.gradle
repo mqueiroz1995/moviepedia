@@ -35,6 +35,7 @@ dependencies {
     testImplementation TestLibraries.mockWebServer
     testImplementation TestLibraries.androidxCore
 
+    androidTestImplementation TestLibraries.junit
     androidTestImplementation AndroidTestLibraries.androidxTestRunner
     androidTestImplementation AndroidTestLibraries.espresso
     androidTestImplementation AndroidTestLibraries.mockk
