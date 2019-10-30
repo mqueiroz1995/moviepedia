@@ -9,7 +9,7 @@ import me.mqueiroz.home.R
 
 class HomeListAdapter : RecyclerView.Adapter<HomeListAdapter.HomeListViewHolder>() {
 
-    var elements: List<String> = emptyList()
+    var elements: List<MovieListItemState> = emptyList()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -30,8 +30,8 @@ class HomeListAdapter : RecyclerView.Adapter<HomeListAdapter.HomeListViewHolder>
 
     inner class HomeListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(element: String) {
-            itemView.title.text = element
+        fun bind(element: MovieListItemState) {
+            itemView.title.text = element.name
         }
     }
 }

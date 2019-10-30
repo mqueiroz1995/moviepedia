@@ -9,8 +9,8 @@ import me.mqueiroz.home.data.TimeWindow
 import me.mqueiroz.home.data.TrendingRepository
 
 class HomeViewModel(
-    private val repository: TrendingRepository
-) : ViewModel<HomeViewState, HomeViewAction>() {
+    repository: TrendingRepository
+) : ViewModel<HomeViewState, HomeViewAction>(initialState = HomeViewState()) {
 
     init {
         repository.getTrending(MediaType.TV, TimeWindow.DAY)
@@ -20,8 +20,16 @@ class HomeViewModel(
                 setState { HomeViewState(isProgressBarVisible = true) }
             }
             .subscribeBy(
-                onSuccess = { setState { HomeViewState(isListVisible = true, listItems = listOf("a", "b", "c")) } },
-                onError = { setState { HomeViewState(isError = true) } }
+                onSuccess = {
+                    val movies = it.results?.map { movie -> MovieListItemState(movie.name.orEmpty()) } ?: emptyList()
+
+                    setState { HomeViewState(isListVisible = true, listItems = movies) }
+                    sendAction { HomeViewAction.Success }
+                },
+                onError = {
+                    setState { HomeViewState(isError = true) }
+                    sendAction { HomeViewAction.Error }
+                }
             )
             .handleDisposable()
     }

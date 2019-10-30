@@ -6,5 +6,5 @@ data class HomeViewState(
     val isProgressBarVisible: Boolean = false,
     val isError: Boolean = false,
     val isListVisible: Boolean = false,
-    val listItems: List<String> = emptyList()
-) : me.mqueiroz.core_presentation.UIState
+    val listItems: List<MovieListItemState> = emptyList()
+) : UIState
