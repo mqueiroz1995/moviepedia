@@ -4,12 +4,11 @@ import android.app.Application
 import me.mqueiroz.core_network.moduleCoreNetwork
 import me.mqueiroz.home.di.moduleFeatureHome
 import org.koin.android.ext.koin.androidContext
-import org.koin.core.KoinApplication
-import org.koin.dsl.koinApplication
+import org.koin.dsl.KoinAppDeclaration
 
 object KoinApplicationProvider {
 
-    fun getKoinApplication(application: Application): KoinApplication = koinApplication {
+    fun get(application: Application): KoinAppDeclaration = {
         androidContext(application)
 
         modules(

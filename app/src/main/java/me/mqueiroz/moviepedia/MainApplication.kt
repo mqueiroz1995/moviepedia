@@ -12,8 +12,6 @@ class MainApplication : Application() {
     }
 
     private fun loadKoin() {
-        startKoin {
-            KoinApplicationProvider.getKoinApplication(this@MainApplication)
-        }
+        startKoin(KoinApplicationProvider.get(this@MainApplication))
     }
 }

@@ -22,8 +22,6 @@ class KoinApplicationProviderTest : KoinTest {
 
     @Test
     fun getModules() {
-        koinApplication {
-            KoinApplicationProvider.getKoinApplication(application)
-        }.checkModules()
+        koinApplication(KoinApplicationProvider.get(application)).checkModules()
     }
 }
