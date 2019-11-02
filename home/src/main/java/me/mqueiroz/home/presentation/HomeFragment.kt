@@ -10,11 +10,10 @@ import kotlinx.android.synthetic.main.fragment_home.*
 import me.mqueiroz.core_presentation.onAction
 import me.mqueiroz.core_presentation.onStateChange
 import me.mqueiroz.home.R
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
-
-    private val viewModel: HomeViewModel by viewModel()
+class HomeFragment(
+    private val viewModel: HomeViewModel
+) : Fragment(R.layout.fragment_home) {
 
     private val adapter by lazy {
         HomeListAdapter()
