@@ -7,7 +7,7 @@ private object Versions {
     const val androidxCore = "1.1.0"
     const val appCompat = "1.1.0"
     const val activity = "1.0.0"
-    const val fragment = "1.1.0"
+    const val fragment = "1.2.0-rc02"
     const val constraintLayout = "1.1.3"
     const val recyclerView = "1.0.0"
     const val lifecycle = "2.1.0"
@@ -16,7 +16,7 @@ private object Versions {
     const val rxkotlin = "2.4.0"
     const val rxandroid = "2.1.1"
 
-    const val koin = "2.0.1"
+    const val koin = "2.1.0-alpha-3"
     const val retrofit = "2.6.0"
     const val okhttp = "4.2.0"
     const val moshi = "1.8.0"
@@ -55,6 +55,7 @@ object Libraries {
     const val koin = "org.koin:koin-core:${Versions.koin}"
     const val koinAndroid = "org.koin:koin-android:${Versions.koin}"
     const val koinAndroidScope = "org.koin:koin-androidx-scope:${Versions.koin}"
+    const val koinAndroidFragment = "org.koin:koin-androidx-fragment:${Versions.koin}"
     const val koinAndroidViewModel = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
 
     const val rxjava = "io.reactivex.rxjava2:rxjava:${Versions.rxjava}"

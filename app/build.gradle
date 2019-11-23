@@ -60,6 +60,7 @@ dependencies {
 
     implementation Libraries.koin
     implementation Libraries.koinAndroid
+    implementation Libraries.koinAndroidFragment
 
     androidTestImplementation TestLibraries.junit
     androidTestImplementation TestLibraries.koin
