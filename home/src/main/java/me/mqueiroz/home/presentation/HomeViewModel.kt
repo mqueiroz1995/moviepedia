@@ -3,7 +3,7 @@ package me.mqueiroz.home.presentation
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
-import me.mqueiroz.core_presentation.ViewModel
+import me.mqueiroz.core_presentation.arch.ViewModel
 import me.mqueiroz.home.data.MediaType
 import me.mqueiroz.home.data.TimeWindow
 import me.mqueiroz.home.data.TrendingRepository

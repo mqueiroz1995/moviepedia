@@ -1,6 +1,6 @@
 package me.mqueiroz.home.presentation
 
-import me.mqueiroz.core_presentation.UIState
+import me.mqueiroz.core_presentation.arch.UIState
 
 data class HomeViewState(
     val isProgressBarVisible: Boolean = false,

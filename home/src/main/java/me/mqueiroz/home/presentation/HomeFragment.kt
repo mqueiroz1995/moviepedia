@@ -5,10 +5,12 @@ import android.view.View
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_home.*
-import me.mqueiroz.core_presentation.onAction
-import me.mqueiroz.core_presentation.onStateChange
+import me.mqueiroz.core_presentation.arch.onAction
+import me.mqueiroz.core_presentation.arch.onStateChange
 import me.mqueiroz.home.R
 
 class HomeFragment(

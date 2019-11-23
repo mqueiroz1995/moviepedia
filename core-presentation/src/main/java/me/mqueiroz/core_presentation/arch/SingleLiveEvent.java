@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-package me.mqueiroz.core_presentation;
+package me.mqueiroz.core_presentation.arch;
 
 import android.util.Log;
 

@@ -1,4 +1,4 @@
-package me.mqueiroz.core_presentation
+package me.mqueiroz.core_presentation.arch
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
