@@ -1,11 +1,13 @@
-package me.mqueiroz.core_network
+package me.mqueiroz.network
 
 import okhttp3.Interceptor
 import okhttp3.Response
 
+// TODO: rename
 class GlobalParamsInterceptor(
     private val key: String
 ) : Interceptor {
+
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
 

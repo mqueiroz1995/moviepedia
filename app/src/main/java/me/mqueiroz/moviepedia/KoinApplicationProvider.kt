@@ -1,7 +1,8 @@
 package me.mqueiroz.moviepedia
 
 import android.app.Application
-import me.mqueiroz.core_network.NetworkModule
+import me.mqueiroz.network.NetworkModule
+import me.mqueiroz.network.serverconfig.di.ServerConfigModule
 import me.mqueiroz.home.di.HomeModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.fragment.koin.fragmentFactory
@@ -15,6 +16,7 @@ object KoinApplicationProvider {
 
         ApiInfoModule.load()
         NetworkModule.load()
+        ServerConfigModule.load()
         HomeModule.load()
     }
 }

@@ -7,4 +7,11 @@ data class HomeViewState(
     val isError: Boolean = false,
     val isListVisible: Boolean = false,
     val listItems: List<MovieListItemState> = emptyList()
-) : UIState
+) : UIState {
+
+    companion object {
+        val initialState
+            get() = HomeViewState()
+    }
+}
+

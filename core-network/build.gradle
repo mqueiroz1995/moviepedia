@@ -1,13 +1,6 @@
-apply plugin: 'java-library'
-apply plugin: 'kotlin'
+apply from: '../kotlin-library.gradle'
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    implementation Libraries.kotlin
-
-    implementation Libraries.koin
-
     implementation Libraries.retrofit
     implementation Libraries.retrofitAdapterRxJava
     implementation Libraries.retrofitConverterMoshi

@@ -1,6 +1,7 @@
 apply from: '../android-library.gradle'
 
 dependencies {
+    implementation project(Modules.coreNetwork)
     implementation project(Modules.corePresentation)
 
     implementation Libraries.androidxCore
@@ -10,6 +11,7 @@ dependencies {
     implementation Libraries.constraintLayout
     implementation Libraries.recyclerView
     implementation Libraries.lifecycle
+    implementation Libraries.materialDesign
 
     implementation Libraries.koin
     implementation Libraries.koinAndroid
@@ -22,4 +24,8 @@ dependencies {
 
     implementation Libraries.retrofit
     implementation Libraries.moshi
+
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    implementation 'jp.wasabeef:glide-transformations:4.1.0'
+    kapt 'com.github.bumptech.glide:compiler:4.10.0'
 }

@@ -6,29 +6,32 @@ import io.reactivex.schedulers.Schedulers
 import me.mqueiroz.core_presentation.arch.ViewModel
 import me.mqueiroz.home.data.MediaType
 import me.mqueiroz.home.data.TimeWindow
-import me.mqueiroz.home.data.TrendingRepository
+import me.mqueiroz.home.domain.TrendingRepository
 
 class HomeViewModel(
     repository: TrendingRepository
-) : ViewModel<HomeViewState, HomeViewAction>(initialState = HomeViewState()) {
+) : ViewModel<HomeViewState, HomeViewAction>(HomeViewState.initialState) {
 
     init {
         repository.getTrending(MediaType.TV, TimeWindow.DAY)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .doOnSubscribe {
-                setState { HomeViewState(isProgressBarVisible = true) }
+            .doOnSubscribe { setState { HomeViewState(isProgressBarVisible = true) } }
+            .map {
+                it.map { movie ->
+                    MovieListItemState(
+                        poster = movie.poster,
+                        name = movie.name,
+                        rate = "${movie.rate}/10"
+                    )
+                }
             }
             .subscribeBy(
-                onSuccess = {
-                    val movies = it.results?.map { movie -> MovieListItemState(movie.name.orEmpty()) } ?: emptyList()
-
+                onSuccess = { movies ->
                     setState { HomeViewState(isListVisible = true, listItems = movies) }
-                    sendAction { HomeViewAction.Success }
                 },
                 onError = {
                     setState { HomeViewState(isError = true) }
-                    sendAction { HomeViewAction.Error }
                 }
             )
             .handleDisposable()

@@ -11,6 +11,7 @@ private object Versions {
     const val constraintLayout = "1.1.3"
     const val recyclerView = "1.0.0"
     const val lifecycle = "2.1.0"
+    const val materialDesign = "1.0.0"
 
     const val rxjava = "2.2.10"
     const val rxkotlin = "2.4.0"
@@ -51,6 +52,7 @@ object Libraries {
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
     const val recyclerView = "androidx.recyclerview:recyclerview:${Versions.recyclerView}"
     const val lifecycle = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
+    const val materialDesign = "com.google.android.material:material:${Versions.materialDesign}"
 
     const val koin = "org.koin:koin-core:${Versions.koin}"
     const val koinAndroid = "org.koin:koin-android:${Versions.koin}"

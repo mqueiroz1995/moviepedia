@@ -1,4 +1,4 @@
-package me.mqueiroz.core_network
+package me.mqueiroz.network
 
 import okhttp3.OkHttpClient
 import org.koin.core.context.loadKoinModules
@@ -21,6 +21,7 @@ object NetworkModule {
         single {
             val apiInfoProvider = get<ApiInfoProvider>()
 
+            // TODO: inject wrapper instead of retrofit
             Retrofit.Builder()
                 .baseUrl(apiInfoProvider.getHost())
                 .client(get())

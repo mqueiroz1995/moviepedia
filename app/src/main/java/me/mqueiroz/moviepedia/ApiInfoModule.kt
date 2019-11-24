@@ -1,6 +1,6 @@
 package me.mqueiroz.moviepedia
 
-import me.mqueiroz.core_network.ApiInfoProvider
+import me.mqueiroz.network.ApiInfoProvider
 import org.koin.core.context.loadKoinModules
 import org.koin.dsl.module
 

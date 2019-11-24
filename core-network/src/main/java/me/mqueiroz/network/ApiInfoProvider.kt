@@ -1,4 +1,4 @@
-package me.mqueiroz.core_network
+package me.mqueiroz.network
 
 interface ApiInfoProvider {
 
