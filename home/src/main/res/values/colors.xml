@@ -3,4 +3,9 @@
 
     <color name="list_item_home_star">#FFAB00</color>
 
+    <color name="search_background">#E0E0E0</color>
+    <color name="search_hint">#9E9E9E</color>
+    <color name="search_drawable">#616161</color>
+    <color name="search_text">#616161</color>
+
 </resources>

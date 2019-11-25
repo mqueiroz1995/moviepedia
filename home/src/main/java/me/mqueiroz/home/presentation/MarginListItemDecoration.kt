@@ -9,7 +9,7 @@ import me.mqueiroz.core_presentation.resources.toPx
 
 class MarginListItemDecoration(
     private val direction: Direction,
-    private val size: DensityIndependentPixel = DensityIndependentPixel(16f)
+    private val size: DensityIndependentPixel = DensityIndependentPixel(32f)
 ) : RecyclerView.ItemDecoration() {
 
     enum class Direction {
