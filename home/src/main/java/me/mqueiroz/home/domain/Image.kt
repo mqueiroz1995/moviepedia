@@ -9,7 +9,8 @@ data class Image(
 ) {
 
     enum class Type {
-        POSTER
+        POSTER,
+        BACKDROP
     }
 
     val optimalSize: String
@@ -21,6 +22,7 @@ data class Image(
         get() {
             return when (type) {
                 Type.POSTER -> imagesConfig.posterSizes
+                Type.BACKDROP -> imagesConfig.backdropSizes
             }
         }
 }

@@ -10,11 +10,18 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 object NetworkModule {
 
     private val module = module {
+
+        single { ApiKeyHeaderInterceptor(get<ApiInfoProvider>().getKey()) }
+
+        single { ServerConfigHeaderInterceptor() }
+
         single {
-            val apiInfoProvider = get<ApiInfoProvider>()
+            val apiKeyInterceptor = get<ApiKeyHeaderInterceptor>()
+            val serverConfigInterceptor = get<ServerConfigHeaderInterceptor>()
 
             OkHttpClient.Builder()
-                .addInterceptor(GlobalParamsInterceptor(apiInfoProvider.getKey()))
+                .addInterceptor(apiKeyInterceptor)
+                .addInterceptor(serverConfigInterceptor)
                 .build()
         }
 

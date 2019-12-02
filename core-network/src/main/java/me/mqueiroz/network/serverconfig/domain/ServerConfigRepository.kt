@@ -1,9 +1,10 @@
 package me.mqueiroz.network.serverconfig.domain
 
 import io.reactivex.Single
-import me.mqueiroz.network.serverconfig.domain.ServerConfig
 
 interface ServerConfigRepository {
 
-    fun getServerConfig() : Single<ServerConfig>
+    fun getServerConfig(): Single<ServerConfig>
+
+    fun getSupportedLanguages(): Single<List<Language>>
 }

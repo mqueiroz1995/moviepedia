@@ -2,11 +2,11 @@ package me.mqueiroz.network
 
 import okhttp3.Interceptor
 import okhttp3.Response
+import org.koin.core.KoinComponent
 
-// TODO: rename
-class GlobalParamsInterceptor(
+class ApiKeyHeaderInterceptor(
     private val key: String
-) : Interceptor {
+) : Interceptor, KoinComponent {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()

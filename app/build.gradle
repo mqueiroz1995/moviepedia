@@ -55,6 +55,7 @@ dependencies {
 
     implementation project(Modules.coreNetwork)
     implementation project(Modules.home)
+    implementation project(":koin-androidx-fragment")
 
     implementation Libraries.appCompat
     implementation Libraries.activity
@@ -62,7 +63,11 @@ dependencies {
 
     implementation Libraries.koin
     implementation Libraries.koinAndroid
-    implementation Libraries.koinAndroidFragment
+//    implementation Libraries.koinAndroidFragment
+
+    implementation Libraries.rxjava
+    implementation Libraries.rxkotlin
+    implementation Libraries.rxandroid
 
     androidTestImplementation TestLibraries.junit
     androidTestImplementation TestLibraries.koin

@@ -6,14 +6,14 @@ import io.reactivex.schedulers.Schedulers
 import me.mqueiroz.core_presentation.arch.ViewModel
 import me.mqueiroz.home.data.MediaType
 import me.mqueiroz.home.data.TimeWindow
-import me.mqueiroz.home.domain.TrendingRepository
+import me.mqueiroz.home.domain.MoviesRepository
 
 class HomeViewModel(
-    repository: TrendingRepository
+    repository: MoviesRepository
 ) : ViewModel<HomeViewState, HomeViewAction>(HomeViewState.initialState) {
 
     init {
-        repository.getTrending(MediaType.TV, TimeWindow.DAY)
+        repository.getNowPlaying(MediaType.TV, TimeWindow.DAY)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe { setState { HomeViewState(isProgressBarVisible = true) } }
@@ -21,7 +21,7 @@ class HomeViewModel(
                 it.map { movie ->
                     MovieListItemState(
                         poster = movie.poster,
-                        name = movie.name,
+                        name = movie.title,
                         rate = "${movie.rate}/10"
                     )
                 }

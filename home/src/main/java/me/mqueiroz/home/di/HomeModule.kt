@@ -1,8 +1,8 @@
 package me.mqueiroz.home.di
 
-import me.mqueiroz.home.data.TrendingRepositoryImpl
-import me.mqueiroz.home.data.TrendingService
-import me.mqueiroz.home.domain.TrendingRepository
+import me.mqueiroz.home.data.MoviesRepositoryImpl
+import me.mqueiroz.home.data.MovieService
+import me.mqueiroz.home.domain.MoviesRepository
 import me.mqueiroz.home.presentation.HomeFragment
 import me.mqueiroz.home.presentation.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -13,8 +13,8 @@ import retrofit2.Retrofit
 object HomeModule {
 
     private val module = module {
-        single { get<Retrofit>().create(TrendingService::class.java) }
-        factory { TrendingRepositoryImpl(get(), get()) as TrendingRepository }
+        single { get<Retrofit>().create(MovieService::class.java) }
+        factory { MoviesRepositoryImpl(get(), get()) as MoviesRepository }
 
         viewModel { HomeViewModel(get()) }
 
